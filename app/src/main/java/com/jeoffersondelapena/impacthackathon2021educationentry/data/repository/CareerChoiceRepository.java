@@ -7,6 +7,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class CareerChoiceRepository {
+    public static List<CareerChoice> filteredSortedCareerChoices;
     public static List<CareerChoice> careerChoices = new ArrayList<>(Arrays.asList(
             new CareerChoice("Graphic Design"),
             new CareerChoice("Criminal Justice & Restorative Justice"),

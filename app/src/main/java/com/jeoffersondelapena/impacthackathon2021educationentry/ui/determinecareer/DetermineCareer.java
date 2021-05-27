@@ -8,12 +8,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.jeoffersondelapena.impacthackathon2021educationentry.R;
+import com.jeoffersondelapena.impacthackathon2021educationentry.data.model.CareerChoice;
 import com.jeoffersondelapena.impacthackathon2021educationentry.data.model.Question;
+import com.jeoffersondelapena.impacthackathon2021educationentry.data.repository.CareerChoiceRepository;
 import com.jeoffersondelapena.impacthackathon2021educationentry.data.repository.QuestionRepository;
+import com.jeoffersondelapena.impacthackathon2021educationentry.util.AlertDialogManager;
+
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class DetermineCareer extends AppCompatActivity {
-
     private int currentIndex;
+    private Question currentQuestion;
 
     private RecyclerView recyclerViewCareerChoices;
     private TextView lblQuestionContent;
@@ -30,19 +36,54 @@ public class DetermineCareer extends AppCompatActivity {
         btnYes = findViewById(R.id.btn_yes);
         btnNo = findViewById(R.id.btn_no);
 
-        btnYes.setOnClickListener(v -> {
-            updateCurrentIndex();
-        });
-        btnNo.setOnClickListener(v -> {
-            updateCurrentIndex();
-        });
+        btnYes.setOnClickListener(v -> onBtnYesClicked());
+        btnNo.setOnClickListener(v -> onBtnNoClicked());
 
+        for (CareerChoice careerChoice: CareerChoiceRepository.careerChoices) {
+            careerChoice.score = .0;
+        }
         resetCurrentIndex();
+    }
+
+    @Override
+    public void onBackPressed() {
+        AlertDialogManager.showAlertDialogBuilder(
+                DetermineCareer.this,
+                "Leave page?",
+                "Your answers will not be saved."
+        ).setPositiveButton(
+                "Leave",
+                (dialog, which) -> DetermineCareer.super.onBackPressed()
+        ).setNegativeButton("No", null)
+                .show();
+    }
+
+    private void onBtnYesClicked() {
+        doMainOperationOnScores(true);
+    }
+
+    private void onBtnNoClicked() {
+        doMainOperationOnScores(false);
+    }
+
+    private void doMainOperationOnScores(boolean isYes) {
+        for (String careerChoiceString: currentQuestion.careerChoices) {
+            for (CareerChoice careerChoice: CareerChoiceRepository.careerChoices) {
+                if (careerChoiceString.equalsIgnoreCase(careerChoice.careerChoiceName)) {
+                    if (isYes) {
+                        careerChoice.score += careerChoice.getScoreChangeAmount();
+                    } else {
+                        careerChoice.score -= careerChoice.getScoreChangeAmount();
+                    }
+                }
+            }
+        }
+        updateCurrentIndex();
     }
 
     private void resetCurrentIndex() {
         currentIndex = 0;
-        updateUi();
+        updateCurrentObject();
     }
 
     private void updateCurrentIndex() {
@@ -51,11 +92,30 @@ public class DetermineCareer extends AppCompatActivity {
         } else {
             currentIndex++;
         }
+        updateCurrentObject();
+    }
+
+    private void updateCurrentObject() {
+        currentQuestion = QuestionRepository.questions.get(currentIndex);
         updateUi();
     }
 
     private void updateUi() {
-        Question currentQuestion = QuestionRepository.questions.get(currentIndex);
         lblQuestionContent.setText(currentQuestion.questionContent);
+
+        CareerChoiceRepository.filteredSortedCareerChoices = new ArrayList<>();
+        for (CareerChoice careerChoice: CareerChoiceRepository.careerChoices) {
+            if (careerChoice.score > 0) {
+                CareerChoiceRepository.filteredSortedCareerChoices.add(careerChoice);
+            }
+        }
+        Collections.sort(
+                CareerChoiceRepository.filteredSortedCareerChoices,
+                (o1, o2) -> Double.compare(o2.score, o1.score)
+        );
+
+        recyclerViewCareerChoices.setAdapter(
+                new CareerChoiceAdapter(CareerChoiceRepository.filteredSortedCareerChoices)
+        );
     }
 }

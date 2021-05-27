@@ -1,8 +1,8 @@
 package com.jeoffersondelapena.impacthackathon2021educationentry.ui.checkmentalhealth;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.jeoffersondelapena.impacthackathon2021educationentry.R;
 

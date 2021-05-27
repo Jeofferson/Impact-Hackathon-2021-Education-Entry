@@ -1,9 +1,9 @@
 package com.jeoffersondelapena.impacthackathon2021educationentry.ui;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.jeoffersondelapena.impacthackathon2021educationentry.R;
 import com.jeoffersondelapena.impacthackathon2021educationentry.ui.checkmentalhealth.CheckMentalHealth;
@@ -12,6 +12,8 @@ import com.jeoffersondelapena.impacthackathon2021educationentry.util.NavigationM
 
 public class MainActivity extends AppCompatActivity {
 
+    // Change the 'Button' here if you will change the activity_main.xml file's widget type for
+    // these IDs
     private Button choiceDetermineCareer;
     private Button choiceCheckMentalHealth;
 

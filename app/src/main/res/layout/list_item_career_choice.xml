@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/lbl_position"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="1." />
+
+        <TextView
+            android:id="@+id/lbl_career_choice_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Sample Career Choice" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.cardview.widget.CardView>
