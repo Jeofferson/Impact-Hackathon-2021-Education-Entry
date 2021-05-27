@@ -11,7 +11,6 @@ import com.jeoffersondelapena.impacthackathon2021educationentry.ui.determinecare
 import com.jeoffersondelapena.impacthackathon2021educationentry.util.NavigationManager;
 
 public class MainActivity extends AppCompatActivity {
-
     // Change the 'Button' here if you will change the activity_main.xml file's widget type for
     // these IDs
     private Button choiceDetermineCareer;
@@ -25,11 +24,15 @@ public class MainActivity extends AppCompatActivity {
         choiceDetermineCareer = findViewById(R.id.choice_determine_career);
         choiceCheckMentalHealth = findViewById(R.id.choice_check_mental_health);
 
-        choiceDetermineCareer.setOnClickListener(v ->
-            NavigationManager.goToActivity(MainActivity.this, DetermineCareer.class, false)
-        );
-        choiceCheckMentalHealth.setOnClickListener(v ->
-            NavigationManager.goToActivity(MainActivity.this, CheckMentalHealth.class, false)
-        );
+        choiceDetermineCareer.setOnClickListener(v -> onChoiceDetermineCareerClicked());
+        choiceCheckMentalHealth.setOnClickListener(v -> onChoiceCheckMentalHealthClicked());
+    }
+
+    private void onChoiceDetermineCareerClicked() {
+        NavigationManager.goToActivity(MainActivity.this, DetermineCareer.class, false);
+    }
+
+    private void onChoiceCheckMentalHealthClicked() {
+        NavigationManager.goToActivity(MainActivity.this, CheckMentalHealth.class, false);
     }
 }

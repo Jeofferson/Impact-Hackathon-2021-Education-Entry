@@ -12,8 +12,6 @@ public class CareerChoice {
             1.3, .8, .6, .4, .3, .25
     ));
 
-    private double scoreChangeAmount;
-
     public String careerChoiceName;
     public double score = .0;
 

@@ -7,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.jeoffersondelapena.impacthackathon2021educationentry.R;
 
 public class CheckMentalHealth extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

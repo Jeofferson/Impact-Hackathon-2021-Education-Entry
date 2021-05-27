@@ -4,10 +4,12 @@ import com.jeoffersondelapena.impacthackathon2021educationentry.data.model.Caree
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class CareerChoiceRepository {
-    public static List<CareerChoice> filteredSortedCareerChoices;
+    private static List<CareerChoice> filteredCareerChoices;
+
     public static List<CareerChoice> careerChoices = new ArrayList<>(Arrays.asList(
             new CareerChoice("Graphic Design"),
             new CareerChoice("Criminal Justice & Restorative Justice"),
@@ -54,4 +56,28 @@ public class CareerChoiceRepository {
             new CareerChoice("Computer Science"),
             new CareerChoice("Information Technology")
     ));
+
+    public static List<CareerChoice> getFilteredCareerChoices() {
+        filteredCareerChoices = new ArrayList<>();
+        for (CareerChoice careerChoice: careerChoices) {
+            if (careerChoice.score > 0) {
+                filteredCareerChoices.add(careerChoice);
+            }
+        }
+
+        Collections.sort(
+                filteredCareerChoices,
+                (o1, o2) -> Double.compare(o2.score, o1.score)
+        );
+
+        return filteredCareerChoices;
+    }
+
+    public static List<CareerChoice> getCareerChoices() {
+        Collections.sort(
+                careerChoices,
+                (o1, o2) -> Double.compare(o2.score, o1.score)
+        );
+        return careerChoices;
+    }
 }

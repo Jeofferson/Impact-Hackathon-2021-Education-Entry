@@ -13,9 +13,7 @@ import com.jeoffersondelapena.impacthackathon2021educationentry.data.model.Quest
 import com.jeoffersondelapena.impacthackathon2021educationentry.data.repository.CareerChoiceRepository;
 import com.jeoffersondelapena.impacthackathon2021educationentry.data.repository.QuestionRepository;
 import com.jeoffersondelapena.impacthackathon2021educationentry.util.AlertDialogManager;
-
-import java.util.ArrayList;
-import java.util.Collections;
+import com.jeoffersondelapena.impacthackathon2021educationentry.util.NavigationManager;
 
 public class DetermineCareer extends AppCompatActivity {
     private int currentIndex;
@@ -88,7 +86,7 @@ public class DetermineCareer extends AppCompatActivity {
 
     private void updateCurrentIndex() {
         if (currentIndex >= (QuestionRepository.questions.size() - 1)) {
-            currentIndex = QuestionRepository.questions.size() - 1;
+            NavigationManager.goToActivity(DetermineCareer.this, CareerResult.class, true);
         } else {
             currentIndex++;
         }
@@ -102,20 +100,8 @@ public class DetermineCareer extends AppCompatActivity {
 
     private void updateUi() {
         lblQuestionContent.setText(currentQuestion.questionContent);
-
-        CareerChoiceRepository.filteredSortedCareerChoices = new ArrayList<>();
-        for (CareerChoice careerChoice: CareerChoiceRepository.careerChoices) {
-            if (careerChoice.score > 0) {
-                CareerChoiceRepository.filteredSortedCareerChoices.add(careerChoice);
-            }
-        }
-        Collections.sort(
-                CareerChoiceRepository.filteredSortedCareerChoices,
-                (o1, o2) -> Double.compare(o2.score, o1.score)
-        );
-
         recyclerViewCareerChoices.setAdapter(
-                new CareerChoiceAdapter(CareerChoiceRepository.filteredSortedCareerChoices)
+                new CareerChoiceAdapter(CareerChoiceRepository.getFilteredCareerChoices())
         );
     }
 }
