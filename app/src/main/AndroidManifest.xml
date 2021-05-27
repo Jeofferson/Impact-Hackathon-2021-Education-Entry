@@ -9,8 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ImpactHackathon2021EducationEntry">
-        <activity android:name=".ui.checkmentalhealth.CheckMentalHealth"></activity>
-        <activity android:name=".ui.determinecareer.DetermineCareer"></activity>
+        <activity android:name=".ui.determinecareer.CareerResult"></activity>
+        <activity android:name=".ui.checkmentalhealth.CheckMentalHealth" />
+        <activity android:name=".ui.determinecareer.DetermineCareer" />
         <activity android:name=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
