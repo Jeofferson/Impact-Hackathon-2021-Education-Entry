@@ -3,13 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@drawable/background_design1"
+    android:orientation="vertical"
     tools:context=".ui.MainActivity">
 
-<!--    Change the 'Button' in MainActivity.java accordingly if you will change these buttons -->
-<!--    into another widget type -->
-<!--    Make sure that these IDs are not modified -->
+    <!--    Change the 'Button' in MainActivity.java accordingly if you will change these -->
+    <!--    buttons into another widget type -->
+    <!--    Make sure that these IDs are not modified -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -23,22 +23,22 @@
             android:layout_gravity="center"
             android:layout_margin="5dp"
             android:backgroundTint="@color/button_color1"
-            android:text="Determine the right career for you"
-            android:textSize="18sp"
             android:fontFamily="@font/roboto_medium"
-            android:textColor="@color/white"/>
+            android:text="Determine the right career for you"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
 
         <Button
             android:id="@+id/choice_check_mental_health"
             android:layout_width="350dp"
             android:layout_height="70dp"
             android:layout_gravity="center"
-            android:backgroundTint="@color/button_color1"
             android:layout_margin="5dp"
+            android:backgroundTint="@color/button_color1"
             android:fontFamily="@font/roboto_medium"
             android:text="Check your mental health"
-            android:textSize="18sp"
-            android:textColor="@color/white"/>
+            android:textColor="@color/white"
+            android:textSize="18sp" />
 
     </LinearLayout>
 

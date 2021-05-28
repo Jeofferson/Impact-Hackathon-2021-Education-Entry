@@ -8,8 +8,6 @@ import java.util.Collections;
 import java.util.List;
 
 public class CareerChoiceRepository {
-    private static List<CareerChoice> filteredCareerChoices;
-
     public static List<CareerChoice> careerChoices = new ArrayList<>(Arrays.asList(
             new CareerChoice("Graphic Design"),
             new CareerChoice("Criminal Justice & Restorative Justice"),
@@ -57,27 +55,21 @@ public class CareerChoiceRepository {
             new CareerChoice("Information Technology")
     ));
 
-    public static List<CareerChoice> getFilteredCareerChoices() {
-        filteredCareerChoices = new ArrayList<>();
+    public static List<CareerChoice> getFilteredSortedCareerChoices() {
+        List<CareerChoice> filteredCareerChoices = new ArrayList<>();
+
         for (CareerChoice careerChoice: careerChoices) {
             if (careerChoice.score > 0) {
                 filteredCareerChoices.add(careerChoice);
             }
         }
-
-        Collections.sort(
-                filteredCareerChoices,
-                (o1, o2) -> Double.compare(o2.score, o1.score)
-        );
+        Collections.sort(filteredCareerChoices, (o1, o2) -> Double.compare(o2.score, o1.score));
 
         return filteredCareerChoices;
     }
 
-    public static List<CareerChoice> getCareerChoices() {
-        Collections.sort(
-                careerChoices,
-                (o1, o2) -> Double.compare(o2.score, o1.score)
-        );
+    public static List<CareerChoice> getSortedCareerChoices() {
+        Collections.sort(careerChoices, (o1, o2) -> Double.compare(o2.score, o1.score));
         return careerChoices;
     }
 }

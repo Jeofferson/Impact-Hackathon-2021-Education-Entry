@@ -27,7 +27,7 @@ public class CareerResult extends AppCompatActivity {
 
         StringBuilder result = new StringBuilder();
         for (int i = 0; i < 5; i++) {
-            CareerChoice careerChoice = CareerChoiceRepository.getCareerChoices().get(i);
+            CareerChoice careerChoice = CareerChoiceRepository.getSortedCareerChoices().get(i);
             result.append(String.format("%d. ", i + 1));
             result.append(careerChoice.careerChoiceName);
             result.append("\n");

@@ -1,12 +1,14 @@
 package com.jeoffersondelapena.impacthackathon2021educationentry.ui.checkmentalhealth;
 
 import android.os.Bundle;
+import android.os.Handler;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.jeoffersondelapena.impacthackathon2021educationentry.R;
-import com.jeoffersondelapena.impacthackathon2021educationentry.data.model.Author;
 import com.jeoffersondelapena.impacthackathon2021educationentry.data.model.Message;
+import com.jeoffersondelapena.impacthackathon2021educationentry.data.repository.AuthorRepository;
+import com.jeoffersondelapena.impacthackathon2021educationentry.data.repository.ChatbotMessageRepository;
 import com.stfalcon.chatkit.messages.MessageInput;
 import com.stfalcon.chatkit.messages.MessagesList;
 import com.stfalcon.chatkit.messages.MessagesListAdapter;
@@ -14,6 +16,8 @@ import com.stfalcon.chatkit.messages.MessagesListAdapter;
 import java.util.Date;
 
 public class CheckMentalHealth extends AppCompatActivity {
+    private MessagesListAdapter<Message> adapter;
+
     private MessageInput input;
     private MessagesList messagesList;
 
@@ -25,36 +29,34 @@ public class CheckMentalHealth extends AppCompatActivity {
         input = findViewById(R.id.input);
         messagesList = findViewById(R.id.messagesList);
 
-        MessagesListAdapter<Message> adapter = new MessagesListAdapter<>("user-123", null);
+        adapter = new MessagesListAdapter<>(
+                AuthorRepository.user.getId(),
+                null
+        );
         messagesList.setAdapter(adapter);
 
         input.setInputListener(input -> {
-            adapter.addToStart(
-                    new Message(
-                            "message-456",
+            adapter.addToStart(new Message(
+                            AuthorRepository.user.getId(),
                             input.toString(),
-                            new Author(
-                                    "user-123",
-                                    "Jeofferson"
-                            ),
+                            AuthorRepository.user,
                             new Date()
                     ),
                     true
             );
+            addNewChatbotMessageToAdapter();
             return true;
         });
 
-        adapter.addToStart(
-                new Message(
-                        "message-123",
-                        "Hello!",
-                        new Author(
-                                "user-789",
-                                "Chatbot"
-                        ),
-                        new Date()
-                ),
-                true
+        ChatbotMessageRepository.index = 0;
+        addNewChatbotMessageToAdapter();
+    }
+
+    private void addNewChatbotMessageToAdapter() {
+        Message message = ChatbotMessageRepository.getNewChatbotMessage();
+        new Handler().postDelayed(
+                () -> adapter.addToStart(message, true),
+                message.getText().length() * ChatbotMessageRepository.CHATBOT_REPLY_DELAY_MULTIPLIER
         );
     }
 }
