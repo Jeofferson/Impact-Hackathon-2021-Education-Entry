@@ -3,6 +3,7 @@ package com.jeoffersondelapena.impacthackathon2021educationentry.ui.determinecar
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -24,16 +25,18 @@ public class CareerChoiceAdapter extends RecyclerView.Adapter<CareerChoiceAdapte
     @Override
     public CareerChoiceViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.list_item_career_choice, parent, false);
+                .inflate(R.layout.item_career_choice, parent, false);
         return new CareerChoiceViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull CareerChoiceViewHolder holder, int position) {
         CareerChoice careerChoice = careerChoices.get(position);
+
         holder.lblPosition.setText(String.format("%d. ", position + 1));
 //        holder.lblPosition.setText(String.valueOf(careerChoice.score));
         holder.lblCareerChoiceName.setText(careerChoice.careerChoiceName);
+        holder.imgCareerChoiceImage.setImageResource(careerChoice.careerChoiceImage);
     }
 
     @Override
@@ -44,10 +47,14 @@ public class CareerChoiceAdapter extends RecyclerView.Adapter<CareerChoiceAdapte
     public class CareerChoiceViewHolder extends RecyclerView.ViewHolder {
         private TextView lblPosition;
         private TextView lblCareerChoiceName;
+
+        private ImageView imgCareerChoiceImage;
+
         public CareerChoiceViewHolder(View itemView) {
             super(itemView);
             lblPosition = itemView.findViewById(R.id.lbl_position);
             lblCareerChoiceName = itemView.findViewById(R.id.lbl_career_choice_name);
+            imgCareerChoiceImage = itemView.findViewById(R.id.img_career_choice_image);
         }
     }
 }

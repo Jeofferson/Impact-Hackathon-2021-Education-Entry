@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.jeoffersondelapena.impacthackathon2021educationentry.R;
 import com.jeoffersondelapena.impacthackathon2021educationentry.ui.checkmentalhealth.CheckMentalHealth;
+import com.jeoffersondelapena.impacthackathon2021educationentry.ui.determinecareer.CareerTestIntroduction;
 import com.jeoffersondelapena.impacthackathon2021educationentry.ui.determinecareer.DetermineCareer;
 import com.jeoffersondelapena.impacthackathon2021educationentry.util.NavigationManager;
 
@@ -29,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void onChoiceDetermineCareerClicked() {
-        NavigationManager.goToActivity(MainActivity.this, DetermineCareer.class, false);
+        NavigationManager.goToActivity(MainActivity.this, CareerTestIntroduction.class, false);
     }
 
     private void onChoiceCheckMentalHealthClicked() {

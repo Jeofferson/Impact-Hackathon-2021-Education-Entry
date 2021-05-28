@@ -11,10 +11,11 @@
         android:id="@+id/recycler_view_career_choices"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/linear_layout"
         android:layout_marginBottom="2dp"
+        android:clipToPadding="false"
+        android:paddingBottom="256dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/list_item_career_choice" />
+        tools:listitem="@layout/item_career_choice" />
 
     <LinearLayout
         android:id="@+id/linear_layout"

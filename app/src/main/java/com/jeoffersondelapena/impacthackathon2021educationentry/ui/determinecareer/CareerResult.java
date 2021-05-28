@@ -26,7 +26,7 @@ public class CareerResult extends AppCompatActivity {
         btnDone.setOnClickListener(v -> onBtnDoneClicked());
 
         StringBuilder result = new StringBuilder();
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 3; i++) {
             CareerChoice careerChoice = CareerChoiceRepository.getSortedCareerChoices().get(i);
             result.append(String.format("%d. ", i + 1));
             result.append(careerChoice.careerChoiceName);

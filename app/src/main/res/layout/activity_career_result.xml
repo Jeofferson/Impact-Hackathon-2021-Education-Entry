@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto_medium"
             android:gravity="center"
-            android:text="Thanks for taking our test! Your top 5 career choices are:"
+            android:text="Thanks for taking our test! Your top 3 career choices are:"
             android:textSize="20sp"
             android:layout_margin="10dp"
             android:textColor="@color/black"/>

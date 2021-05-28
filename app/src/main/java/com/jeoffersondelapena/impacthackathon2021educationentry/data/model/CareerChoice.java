@@ -13,10 +13,12 @@ public class CareerChoice {
     ));
 
     public String careerChoiceName;
+    public int careerChoiceImage;
     public double score = .0;
 
-    public CareerChoice(String careerChoiceName) {
+    public CareerChoice(String careerChoiceName, int careerChoiceImage) {
         this.careerChoiceName = careerChoiceName;
+        this.careerChoiceImage = careerChoiceImage;
     }
 
     public double getScoreChangeAmount() {

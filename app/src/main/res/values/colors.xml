@@ -8,5 +8,9 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="button_color1">#66B9F9</color>
+    <color name="button_color1_dark">#2489c6</color>
+    <color name="button_color1_light">#9debff</color>
     <color name="button_color2">#66F980</color>
+    <color name="button_color2_dark">#1fc551</color>
+    <color name="button_color2_light">#9effb1</color>
 </resources>
