@@ -63,6 +63,7 @@ public class CareerResult extends AppCompatActivity implements CareerChoiceAdapt
 
     @Override
     public void onBtnWatchAVideoClicked(CareerChoice careerChoice) {
+        CareerChoice.selectedCareerChoice = careerChoice;
         NavigationManager.goToActivity(CareerResult.this, WatchAVideo.class, false);
     }
 

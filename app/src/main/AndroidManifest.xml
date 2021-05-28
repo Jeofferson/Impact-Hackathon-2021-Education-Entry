@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ImpactHackathon2021EducationEntry">
-        <activity android:name=".ui.determinecareer.WatchAVideo"></activity>
+        <activity android:name=".ui.determinecareer.AssessmentTestResult"></activity>
+        <activity android:name=".ui.determinecareer.WatchAVideo" />
         <activity android:name=".ui.determinecareer.TakeAssessmentTest" />
         <activity android:name=".ui.determinecareer.CareerTestIntroduction" />
         <activity android:name=".ui.determinecareer.CareerResult" />

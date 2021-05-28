@@ -7,6 +7,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public class CareerChoice {
+    public static CareerChoice selectedCareerChoice;
+
     public static final double SCORE_CHANGE_AMOUNT_DEFAULT = .2;
     public static final List<Double> SCORE_CHANGE_AMOUNTS = new ArrayList<>(Arrays.asList(
             1.3, .8, .6, .4, .3, .25
@@ -14,6 +16,8 @@ public class CareerChoice {
 
     public String careerChoiceName;
     public int careerChoiceImage;
+    public String getCareerChoiceDescription;
+    public int careerChoiceVideo;
     public double score = .0;
 
     public CareerChoice(String careerChoiceName, int careerChoiceImage) {
@@ -21,11 +25,18 @@ public class CareerChoice {
         this.careerChoiceImage = careerChoiceImage;
     }
 
+    public CareerChoice(String careerChoiceName, int careerChoiceImage, String careerChoiceDescription, int careerChoiceVideo) {
+        this.careerChoiceName = careerChoiceName;
+        this.careerChoiceImage = careerChoiceImage;
+        this.getCareerChoiceDescription = careerChoiceDescription;
+        this.careerChoiceVideo = careerChoiceVideo;
+    }
+
     public double getScoreChangeAmount() {
         int associatedQuestions = 0;
 
-        for (Question question: QuestionRepository.questions) {
-            for (String careerChoice: question.careerChoices) {
+        for (Question question : QuestionRepository.questions) {
+            for (String careerChoice : question.careerChoices) {
                 if (careerChoice.equalsIgnoreCase(careerChoiceName)) {
                     associatedQuestions++;
                 }

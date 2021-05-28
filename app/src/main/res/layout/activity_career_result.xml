@@ -49,6 +49,7 @@
         android:layout_marginBottom="15dp"
         android:backgroundTint="@color/button_color2"
         android:text="Done"
+        android:textColor="@color/black"
         android:textSize="18sp" />
 
 </RelativeLayout>

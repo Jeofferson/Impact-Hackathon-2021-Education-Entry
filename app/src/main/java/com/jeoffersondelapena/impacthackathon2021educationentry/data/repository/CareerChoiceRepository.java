@@ -42,7 +42,12 @@ public class CareerChoiceRepository {
             new CareerChoice("Film Production", R.drawable.film_production),
             new CareerChoice("Theater", R.drawable.theater),
             new CareerChoice("Music", R.drawable.music),
-            new CareerChoice("Art", R.drawable.art),
+            new CareerChoice(
+                    "Art",
+                    R.drawable.art,
+                    "Art, in its broadest sense, is a form of communication. It means whatever the artist intends it to mean, and this meaning is shaped by the materials, techniques, and forms it makes use of, as well as the ideas and feelings it creates in its viewers . Art is an act of expressing feelings, thoughts, and observations.",
+                    R.raw.art
+            ),
             new CareerChoice("Communication", R.drawable.communication),
             new CareerChoice("Marketing", R.drawable.marketing),
             new CareerChoice("Business", R.drawable.business),
@@ -53,7 +58,12 @@ public class CareerChoiceRepository {
             new CareerChoice("Physics", R.drawable.physics),
             new CareerChoice("Mathematics", R.drawable.mathematics),
             new CareerChoice("Computer Science", R.drawable.computer_science),
-            new CareerChoice("Information Technology", R.drawable.information_technology)
+            new CareerChoice(
+                    "Information Technology",
+                    R.drawable.information_technology,
+                    "Information technology is the study, design, development, implementation, support or management of computer-based information systems—particularly software applications and computer hardware. IT workers help ensure that computers work well for people.",
+                    R.raw.information_technology
+            )
     ));
 
     public static List<CareerChoice> getFilteredSortedCareerChoices() {
