@@ -20,6 +20,8 @@ public class DetermineCareer extends AppCompatActivity {
     private Question currentQuestion;
 
     private RecyclerView recyclerViewCareerChoices;
+    private TextView lblQuestionIndex;
+    private TextView lblQuestionTotal;
     private TextView lblQuestionContent;
     private Button btnYes;
     private Button btnNo;
@@ -30,6 +32,8 @@ public class DetermineCareer extends AppCompatActivity {
         setContentView(R.layout.activity_determine_career);
 
         recyclerViewCareerChoices = findViewById(R.id.recycler_view_career_choices);
+        lblQuestionIndex = findViewById(R.id.lbl_question_index);
+        lblQuestionTotal = findViewById(R.id.lbl_question_total);
         lblQuestionContent = findViewById(R.id.lbl_question_content);
         btnYes = findViewById(R.id.btn_yes);
         btnNo = findViewById(R.id.btn_no);
@@ -99,7 +103,10 @@ public class DetermineCareer extends AppCompatActivity {
     }
 
     private void updateUi() {
+        lblQuestionIndex.setText(String.valueOf(currentIndex + 1));
+        lblQuestionTotal.setText(String.valueOf(QuestionRepository.questions.size()));
         lblQuestionContent.setText(currentQuestion.questionContent);
+
         recyclerViewCareerChoices.setAdapter(
                 new CareerChoiceAdapter(CareerChoiceRepository.getFilteredSortedCareerChoices())
         );
