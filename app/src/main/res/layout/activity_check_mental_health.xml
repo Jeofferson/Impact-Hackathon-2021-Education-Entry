@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_design2"
     tools:context=".ui.checkmentalhealth.CheckMentalHealth">
 
     <!--    Use the commented code below as a reference for styling the attributes of this -->
@@ -12,7 +13,7 @@
         android:id="@+id/messagesList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/input" />
+        android:layout_above="@+id/input"/>
 
     <!--    Use the commented code below as a reference for styling the attributes of this -->
     <!--    widget -->
@@ -21,7 +22,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        app:inputHint="Type a message..." />
+        app:inputHint="Type a message..."
+        app:inputTextColor="@color/white"/>
 
     <!--    Use this as a reference for styling the MessageList attributes -->
     <!--    <com.stfalcon.chatkit.messages.MessagesList-->

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_design1"
+    android:background="@drawable/blue_abstract_polygon"
     tools:context=".ui.determinecareer.CareerResult">
 
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -12,17 +12,17 @@
         android:layout_centerVertical="true"
         android:orientation="vertical"
         android:layout_margin="20dp"
-        android:background="@drawable/background_design2">
+        android:background="@drawable/background_design3">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto_medium"
-            android:gravity="fill_vertical"
+            android:gravity="center"
             android:text="Thanks for taking our quiz! Your top 5 career choices are:"
             android:textSize="20sp"
             android:layout_margin="10dp"
-            android:textColor="@color/white"/>
+            android:textColor="@color/black"/>
 
         <TextView
             android:id="@+id/lbl_result"
