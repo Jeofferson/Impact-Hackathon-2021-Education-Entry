@@ -31,7 +31,7 @@ public class CareerChoiceAdapter extends RecyclerView.Adapter<CareerChoiceAdapte
     @Override
     public void onBindViewHolder(@NonNull CareerChoiceViewHolder holder, int position) {
         CareerChoice careerChoice = careerChoices.get(position);
-        holder.lblPosition.setText(String.format("%d.", position + 1));
+        holder.lblPosition.setText(String.format("%d. ", position + 1));
 //        holder.lblPosition.setText(String.valueOf(careerChoice.score));
         holder.lblCareerChoiceName.setText(careerChoice.careerChoiceName);
     }

@@ -3,34 +3,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_design1"
     tools:context=".ui.determinecareer.CareerResult">
 
-    <LinearLayout
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_margin="20dp"
+        android:background="@drawable/background_design2">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Your top 5 career choices are:" />
+            android:fontFamily="@font/roboto_medium"
+            android:gravity="fill_vertical"
+            android:text="Thanks for taking our quiz! Your top 5 career choices are:"
+            android:textSize="20sp"
+            android:layout_margin="10dp"
+            android:textColor="@color/white"/>
 
         <TextView
             android:id="@+id/lbl_result"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
+            android:fontFamily="@font/roboto"
+            android:gravity="fill_vertical"
+            android:textSize="18sp"
+            android:layout_marginLeft="20dp"
             tools:text="Sample Career Choice" />
 
-    </LinearLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
     <Button
         android:id="@+id/btn_done"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15dp"
         android:layout_alignParentBottom="true"
-        android:text="Done" />
+        android:backgroundTint="@color/button_color2"
+        android:text="Done"
+        android:textSize="18sp"/>
 
 </RelativeLayout>
