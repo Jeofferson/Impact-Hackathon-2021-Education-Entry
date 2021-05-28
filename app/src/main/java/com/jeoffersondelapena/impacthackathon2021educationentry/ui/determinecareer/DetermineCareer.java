@@ -109,7 +109,10 @@ public class DetermineCareer extends AppCompatActivity {
         lblQuestionContent.setText(currentQuestion.questionContent);
 
         recyclerViewCareerChoices.setAdapter(
-                new CareerChoiceAdapter(CareerChoiceRepository.getFilteredSortedCareerChoices())
+                new CareerChoiceAdapter(
+                        CareerChoiceRepository.getFilteredSortedCareerChoices(),
+                        false
+                )
         );
     }
 }

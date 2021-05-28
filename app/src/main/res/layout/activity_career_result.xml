@@ -1,38 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/blue_abstract_polygon"
     tools:context=".ui.determinecareer.CareerResult">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_career_choices"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="2dp"
+        android:clipToPadding="false"
+        android:paddingTop="96dp"
+        android:paddingBottom="96dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_career_choice_with_buttons" />
+
     <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linear_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
         android:layout_centerVertical="true"
-        android:orientation="vertical"
         android:layout_margin="20dp"
-        android:background="@drawable/background_design3">
+        android:background="@drawable/background_design3"
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="10dp"
             android:fontFamily="@font/roboto_medium"
             android:gravity="center"
             android:text="Thanks for taking our test! Your top 3 career choices are:"
-            android:textSize="20sp"
-            android:layout_margin="10dp"
-            android:textColor="@color/black"/>
-
-        <TextView
-            android:id="@+id/lbl_result"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto"
-            android:gravity="fill_vertical"
-            android:textSize="18sp"
-            android:layout_marginLeft="20dp"
-            tools:text="Sample Career Choice" />
+            android:textColor="@color/black"
+            android:textSize="20sp" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -40,11 +44,11 @@
         android:id="@+id/btn_done"
         android:layout_width="350dp"
         android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="15dp"
-        android:layout_alignParentBottom="true"
         android:backgroundTint="@color/button_color2"
         android:text="Done"
-        android:textSize="18sp"/>
+        android:textSize="18sp" />
 
 </RelativeLayout>

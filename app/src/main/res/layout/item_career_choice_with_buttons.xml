@@ -45,6 +45,18 @@
             android:scaleType="centerCrop"
             tools:src="@drawable/ic_launcher_background" />
 
+        <Button
+            android:id="@+id/btn_take_assessment_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Take Assesment Test" />
+
+        <Button
+            android:id="@+id/btn_watch_a_video"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Watch a Video" />
+
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>
