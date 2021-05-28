@@ -12,6 +12,7 @@ import com.jeoffersondelapena.impacthackathon2021educationentry.data.model.Caree
 import com.jeoffersondelapena.impacthackathon2021educationentry.data.model.Question;
 import com.jeoffersondelapena.impacthackathon2021educationentry.data.repository.CareerChoiceRepository;
 import com.jeoffersondelapena.impacthackathon2021educationentry.data.repository.QuestionRepository;
+import com.jeoffersondelapena.impacthackathon2021educationentry.ui.MainActivity;
 import com.jeoffersondelapena.impacthackathon2021educationentry.util.AlertDialogManager;
 import com.jeoffersondelapena.impacthackathon2021educationentry.util.NavigationManager;
 
@@ -55,7 +56,7 @@ public class DetermineCareer extends AppCompatActivity {
                 "Your answers will not be saved."
         ).setPositiveButton(
                 "Leave",
-                (dialog, which) -> DetermineCareer.super.onBackPressed()
+                (dialog, which) -> NavigationManager.goToActivity(DetermineCareer.this, MainActivity.class, true)
         ).setNegativeButton("No", null)
                 .show();
     }
