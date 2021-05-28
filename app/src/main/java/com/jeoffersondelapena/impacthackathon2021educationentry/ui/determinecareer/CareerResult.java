@@ -36,6 +36,11 @@ public class CareerResult extends AppCompatActivity {
         lblResult.setText(result);
     }
 
+    @Override
+    public void onBackPressed() {
+        NavigationManager.goToActivity(CareerResult.this, MainActivity.class, true);
+    }
+
     private void onBtnDoneClicked() {
         NavigationManager.goToActivity(CareerResult.this, MainActivity.class, true);
     }
