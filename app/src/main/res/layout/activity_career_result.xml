@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/blue_abstract_polygon"
     tools:context=".ui.determinecareer.CareerResult">
 
     <androidx.recyclerview.widget.RecyclerView
@@ -26,30 +25,33 @@
         android:layout_centerVertical="true"
         android:layout_margin="20dp"
         android:background="@drawable/background_design3"
+        android:backgroundTint="@color/background"
         android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:fontFamily="@font/roboto_medium"
+            android:fontFamily="casual"
             android:gravity="center"
             android:text="Thanks for taking our test! Your top 3 career choices are:"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="20sp" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
     <Button
         android:id="@+id/btn_done"
-        android:layout_width="350dp"
+        android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="15dp"
-        android:backgroundTint="@color/button_color2"
+        android:layout_margin="15dp"
         android:text="Done"
-        android:textColor="@color/black"
-        android:textSize="18sp" />
+        android:backgroundTint="@color/button_color1"
+        android:fontFamily="@font/roboto_medium"
+        android:textColor="@color/white"
+        android:textSize="18sp"  />
 
 </RelativeLayout>

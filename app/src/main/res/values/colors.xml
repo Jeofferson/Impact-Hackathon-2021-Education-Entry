@@ -13,4 +13,6 @@
     <color name="button_color2">#66F980</color>
     <color name="button_color2_dark">#1fc551</color>
     <color name="button_color2_light">#9effb1</color>
+    <color name="background">#214e73</color>
+    <color name="background2">#003152</color>
 </resources>

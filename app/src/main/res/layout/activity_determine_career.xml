@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_design1"
+    android:background="@color/background"
     tools:context=".ui.determinecareer.DetermineCareer">
 
     <androidx.recyclerview.widget.RecyclerView
@@ -67,7 +67,7 @@
             android:layout_margin="10dp"
             android:fontFamily="@font/roboto_medium"
             android:gravity="center"
-            android:textSize="20sp"
+            android:textSize="25sp"
             tools:text="Sample Question" />
 
         <LinearLayout
@@ -78,20 +78,20 @@
             <Button
                 android:id="@+id/btn_no"
                 android:layout_width="0dp"
-                android:layout_height="50dp"
+                android:layout_height="60dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:backgroundTint="@color/button_color2"
+                android:backgroundTint="@color/button_color1"
                 android:text="No"
                 android:textSize="18sp" />
 
             <Button
                 android:id="@+id/btn_yes"
                 android:layout_width="0dp"
-                android:layout_height="50dp"
+                android:layout_height="60dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:backgroundTint="@color/button_color2"
+                android:backgroundTint="@color/button_color1"
                 android:text="Yes"
                 android:textSize="18sp" />
 
